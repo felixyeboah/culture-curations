@@ -1,6 +1,6 @@
 import { Box, Flex, Image } from '@chakra-ui/react';
+import useSlider from '@hooks/useSlider';
 import React from 'react';
-import useSlider from 'hooks/useSlider';
 
 const images = [
   { id: 1, img: 'slide-1.jpg' },
