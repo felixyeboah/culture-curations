@@ -14,9 +14,9 @@ const Footer = () => {
       fontWeight='bold'
       pos='fixed'
       bottom={6}
-      px={{ md: 20 }}
+      px={{ base: 4, md: 20 }}
     >
-      <Flex align='center'>
+      <Flex align='center' d={{ base: 'none', sm: 'flex' }}>
         <NextLink href='/' passHref>
           <Link _hover={{ textDecor: 'none' }} pr={4}>
             Events
@@ -46,12 +46,12 @@ const Footer = () => {
             </Link>
           </NextLink>
         </Flex>
-        <Text>
+        <Text fontSize={{ base: 'sm', md: 'md' }} textAlign='center'>
           &copy; copyright {new Date().getFullYear()}. Culture Curations. All
           rights reserved.
         </Text>
       </Flex>
-      <Flex align='center'>
+      <Flex align='center' d={{ base: 'none', sm: 'flex' }}>
         <NextLink href='/' passHref>
           <Link _hover={{ textDecor: 'none' }} px={4}>
             About
