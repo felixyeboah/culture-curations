@@ -1,10 +1,11 @@
 import { Box } from '@chakra-ui/react';
-import Slider from '../components/Slider';
+import Slider from 'components/Slider';
+import Layout from 'container/Layout';
 
 export default function Home() {
   return (
-    <Box>
+    <Layout title='Home'>
       <Slider />
-    </Box>
+    </Layout>
   );
 }

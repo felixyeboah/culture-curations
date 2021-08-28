@@ -1,9 +1,9 @@
 import '../styles/globals.css';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 
-import { theme } from '../theme/theme';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { theme } from 'theme/theme';
+import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
 
 function MyApp({ Component, pageProps }) {
   return (
