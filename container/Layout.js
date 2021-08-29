@@ -6,13 +6,13 @@ const Layout = ({ children, title, description }) => {
   return (
     <Box>
       <NextSeo
-        title={title | 'Culture Curations'}
-        description={description | 'Culture Curations'}
+        title={`${title} | Culture Curations`}
+        description={description}
         canonical='https://www.canonical.ie/'
         openGraph={{
           url: 'https://www.url.ie/a',
-          title: { title },
-          description: { description },
+          title: `${title} | Culture Curations`,
+          description: description,
           images: [
             {
               url: 'https://i.imgur.com/P1YSywa.jpg',

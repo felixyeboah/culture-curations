@@ -46,8 +46,12 @@ const Footer = () => {
             </Link>
           </NextLink>
         </Flex>
-        <Text fontSize={{ base: 'sm', md: 'md' }} textAlign='center'>
-          &copy; copyright {new Date().getFullYear()}. Culture Curations. All
+        <Text
+          fontSize={{ base: 'sm', md: 'md' }}
+          textAlign='center'
+          mixBlendMode='difference'
+        >
+          &copy; Copyright {new Date().getFullYear()}. Culture Curations. All
           rights reserved.
         </Text>
       </Flex>

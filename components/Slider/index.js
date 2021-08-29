@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import useSlider from '@hooks/useSlider';
 import React from 'react';
 
@@ -61,6 +61,48 @@ const Slider = () => {
               alt='building'
             />
           ))}
+        </Flex>
+
+        <Flex
+          align='center'
+          justify='center'
+          w='100vw'
+          pos='absolute'
+          inset={0}
+          color='white'
+          px={{ base: 4, sm: 0 }}
+          h='100vh'
+          direction='column'
+        >
+          <Heading
+            as='h2'
+            fontSize={{ base: '3xl', sm: '8xl' }}
+            textAlign='center'
+          >
+            Hang out with the <Box as='br' />
+            <Text as='span' color='#ffc600'>
+              chillest tribe
+            </Text>{' '}
+            in town
+          </Heading>
+
+          <Flex align='center' mt={6}>
+            <Button
+              mr={4}
+              px={{ base: 8 }}
+              h={{ base: 12, sm: 14 }}
+              colorScheme='purple'
+            >
+              Book events
+            </Button>
+            <Button
+              px={{ base: 8 }}
+              h={{ base: 12, sm: 14 }}
+              colorScheme='blue'
+            >
+              Book a table
+            </Button>
+          </Flex>
         </Flex>
       </Box>
     </Flex>
