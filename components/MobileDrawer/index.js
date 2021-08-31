@@ -24,7 +24,7 @@ const data = [
   {
     id: 2,
     title: 'Gallery',
-    link: '/gallery',
+    link: '/gallery ',
   },
   {
     id: 4,

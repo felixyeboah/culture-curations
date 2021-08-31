@@ -28,7 +28,7 @@ const MobileDrawerWrapper = ({ children }) => {
         w={85}
         h='100vh'
         p={6}
-        bg='gray.50'
+        bg='brand.lightOrange'
       >
         {children}
       </MotionBox>

@@ -1,8 +1,11 @@
-import { Box, Flex, Icon, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Icon, Image, Link, Text } from '@chakra-ui/react';
+import NavLink from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { BsBagFill } from 'react-icons/bs';
 
 const MobileNavbar = ({ onOpen }) => {
+  const { pathname } = useRouter();
   return (
     <Flex
       as='nav'
@@ -14,7 +17,7 @@ const MobileNavbar = ({ onOpen }) => {
       top={0}
       zIndex={10}
       w='100%'
-      color='white'
+      color={pathname === '/' ? 'white' : 'black'}
       fontWeight='bold'
       d={{ base: 'flex', sm: 'none' }}
     >
@@ -32,9 +35,17 @@ const MobileNavbar = ({ onOpen }) => {
         <Image src='/humberger.svg' alt='humburger' />
       </Flex>
 
-      <Box>
-        <Image h={{ base: 16, md: 24 }} src='/images/logo.png' alt='logo' />
-      </Box>
+      <NavLink href='/' passHref>
+        <Link>
+          <Image
+            h={{ base: 16, md: 24 }}
+            src={
+              pathname === '/' ? '/images/logo.png' : '/images/logo-black.png'
+            }
+            alt='logo'
+          />
+        </Link>
+      </NavLink>
 
       <Box>
         <Icon as={BsBagFill} boxSize={6} />

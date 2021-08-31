@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Link,
+  Text,
+} from '@chakra-ui/react';
 import useSlider from '@hooks/useSlider';
 import React from 'react';
 import { GiTable } from 'react-icons/gi';
@@ -49,7 +57,6 @@ const HomeSlider = () => {
   return (
     <Box w='100vw' h='100vh' overflow='hidden' pos='relative'>
       <Slider {...settings}>
-        {/* <Box w='100vw' h='100vh' overflow='hidden' pos='relative'> */}
         {images.map((image) => (
           <Image
             key={image.id}
@@ -58,6 +65,7 @@ const HomeSlider = () => {
             objectFit='cover'
             src={`/images/slides/${image.img}`}
             alt='Events'
+            overflow='hidden'
           />
         ))}
 
@@ -88,14 +96,16 @@ const HomeSlider = () => {
           >
             Tickets
           </Button>
-          <Button
-            px={{ base: 8, sm: 12 }}
-            h={{ base: 12, sm: 14 }}
-            colorScheme='blue'
-            leftIcon={<GiTable />}
-          >
-            Tables
-          </Button>
+          <Link href='tel:+23311111111'>
+            <Button
+              px={{ base: 8, sm: 12 }}
+              h={{ base: 12, sm: 14 }}
+              colorScheme='blue'
+              leftIcon={<GiTable />}
+            >
+              Tables
+            </Button>
+          </Link>
         </Flex>
       </Flex>
     </Box>

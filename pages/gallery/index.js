@@ -5,12 +5,16 @@ import NextLink from 'next/link';
 
 const Galleries = () => {
   return (
-    <Layout pt={{ md: 48 }} px={{ md: 24 }}>
+    <Layout pt={{ base: 24, md: 48 }} px={{ base: 4, md: 24 }}>
       <Box>
-        <Heading>Our Gallery</Heading>
+        <Heading>Gallery</Heading>
       </Box>
 
-      <Grid templateColumns={{ md: 'repeat(4, 1fr)' }} gap={6} mt={{ md: 20 }}>
+      <Grid
+        templateColumns={{ md: 'repeat(4, 1fr)' }}
+        gap={6}
+        mt={{ base: 10, md: 20 }}
+      >
         <NextLink href='/gallery/october-2021'>
           <Link _hover={{ textDecor: 'none' }}>
             <Box>

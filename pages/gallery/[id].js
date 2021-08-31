@@ -14,12 +14,12 @@ const Gallery = () => {
   };
 
   return (
-    <Layout pt={{ md: 48 }} px={{ md: 24 }}>
+    <Layout pt={{ base: 24, md: 48 }} px={{ base: 4, md: 24 }}>
       <Box>
         <Heading>Images for October</Heading>
       </Box>
 
-      <Box mt={{ md: 20 }}>
+      <Box mt={{ base: 10, md: 20 }}>
         <SRLWrapper>
           <Masonry
             breakpointCols={breakpointColumnsObj}

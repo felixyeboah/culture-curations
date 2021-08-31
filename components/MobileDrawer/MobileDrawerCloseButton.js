@@ -1,4 +1,5 @@
-import { Box, Flex, Icon, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Icon, Image, Link, Text } from '@chakra-ui/react';
+import NavLink from 'next/link';
 import React from 'react';
 import { BiX } from 'react-icons/bi';
 
@@ -13,13 +14,15 @@ const MobileDrawerCloseButton = ({ onClose }) => {
       onClick={onClose}
       w='100%'
     >
-      <Box>
-        <Image
-          h={16}
-          src='/images/logo-black.png'
-          alt='Culture Curations Logo'
-        />
-      </Box>
+      <NavLink href='/' passHref>
+        <Link>
+          <Image
+            h={16}
+            src='/images/logo-black.png'
+            alt='Culture Curations Logo'
+          />
+        </Link>
+      </NavLink>
       <Flex align='center'>
         <Text mr={1}>Close</Text>
         <Icon as={BiX} boxSize={6} />
