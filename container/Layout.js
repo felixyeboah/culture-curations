@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 import { NextSeo } from 'next-seo';
 
-const Layout = ({ children, title, description }) => {
+const Layout = ({ children, title, description, ...rest }) => {
   return (
     <Box>
       <NextSeo
@@ -29,7 +29,7 @@ const Layout = ({ children, title, description }) => {
           cardType: 'summary_large_image',
         }}
       />
-      <Box>{children}</Box>
+      <Box {...rest}>{children}</Box>
     </Box>
   );
 };

@@ -5,6 +5,7 @@ import MobileDrawerCloseButton from './MobileDrawerCloseButton';
 import MobileDrawerWrapper from './MobileDrawerWrapper';
 
 const data = [
+  { id: 3, title: 'About', link: '/about' },
   {
     id: 1,
     title: 'Events',
@@ -15,7 +16,16 @@ const data = [
     title: 'Tickets',
     link: '/tickets',
   },
-  { id: 3, title: 'About', link: '/about' },
+  {
+    id: 2,
+    title: 'Merchandise',
+    link: '/merchandise',
+  },
+  {
+    id: 2,
+    title: 'Gallery',
+    link: '/gallery',
+  },
   {
     id: 4,
     title: 'Contact',

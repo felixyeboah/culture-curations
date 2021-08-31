@@ -1,8 +1,11 @@
-import { Box, Flex, Heading, Icon, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Icon, Image, Link } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { BsBagFill } from 'react-icons/bs';
 
 const Navbar = () => {
+  const { pathname } = useRouter();
   return (
     <Flex
       as='nav'
@@ -14,13 +17,21 @@ const Navbar = () => {
       top={0}
       zIndex={10}
       w='100%'
-      color='white'
+      color={pathname === '/' ? 'white' : 'black'}
       fontWeight='bold'
       d={{ base: 'none', sm: 'flex' }}
     >
-      <Box>
-        <Image h={{ base: 16, md: 24 }} src='/images/logo.png' alt='logo' />
-      </Box>
+      <NextLink href='/' passHref>
+        <Link _hover={{ textDecor: 'none' }}>
+          <Image
+            h={{ base: 16, md: 24 }}
+            src={
+              pathname === '/' ? '/images/logo.png' : '/images/logo-black.png'
+            }
+            alt='logo'
+          />
+        </Link>
+      </NextLink>
       <Box>
         <Heading as='h3' fontSize={{ md: '4xl' }}>
           Culture Curations
