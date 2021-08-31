@@ -2,10 +2,12 @@ import {
   Box,
   Button,
   Flex,
-  Heading,
   Image,
   Link,
-  Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from '@chakra-ui/react';
 import useSlider from '@hooks/useSlider';
 import React from 'react';
@@ -61,16 +63,32 @@ const HomeSlider = () => {
         zIndex={1}
       >
         <Flex align='center' mt={6}>
-          <Button
-            mr={4}
-            px={{ base: 8, sm: 12 }}
-            h={{ base: 12, sm: 14 }}
-            colorScheme='purple'
-            leftIcon={<IoTicket />}
-          >
-            Tickets
-          </Button>
-          <Link href='tel:+23311111111'>
+          <Menu>
+            <MenuButton
+              as={Button}
+              mr={4}
+              px={{ base: 8, sm: 12 }}
+              h={{ base: 12, sm: 14 }}
+              colorScheme='purple'
+              rightIcon={<IoTicket />}
+            >
+              Tickets
+            </MenuButton>
+            <MenuList color='gray.700'>
+              <Link href='tel:+233558519900' _hover={{ textDecor: 'none' }}>
+                <MenuItem>Call to book</MenuItem>
+              </Link>
+              <Link
+                href=' https://wa.me/233558519900'
+                isExternal
+                _hover={{ textDecor: 'none' }}
+              >
+                <MenuItem>WhatsApp to book</MenuItem>
+              </Link>
+            </MenuList>
+          </Menu>
+
+          <Link href='tel:+233558519900' _hover={{ textDecor: 'none' }}>
             <Button
               px={{ base: 8, sm: 12 }}
               h={{ base: 12, sm: 14 }}

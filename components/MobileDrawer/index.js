@@ -5,34 +5,29 @@ import MobileDrawerCloseButton from './MobileDrawerCloseButton';
 import MobileDrawerWrapper from './MobileDrawerWrapper';
 
 const data = [
-  { id: 3, title: 'About', link: '/about' },
+  { id: 1, title: 'About', link: '/about' },
   {
-    id: 1,
+    id: 2,
     title: 'Events',
     link: '/events',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Tickets',
     link: '/tickets',
   },
   {
-    id: 2,
+    id: 4,
     title: 'Merchandise',
     link: '/merchandise',
   },
   {
-    id: 2,
+    id: 5,
     title: 'Gallery',
     link: '/gallery ',
   },
   {
-    id: 4,
-    title: 'Contact',
-    link: '/contact',
-  },
-  {
-    id: 5,
+    id: 6,
     title: 'Login',
     link: '/login',
   },

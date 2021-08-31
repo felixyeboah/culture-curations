@@ -6,6 +6,7 @@ import {
   FaSnapchatGhost,
   FaTwitter,
   FaYoutube,
+  FaSpotify,
 } from 'react-icons/fa';
 import { SiAudiomack } from 'react-icons/si';
 import NextLink from 'next/link';
@@ -45,11 +46,9 @@ const Footer = () => {
       </Flex>
       <Flex direction='column' align='center'>
         <Flex align='center' mb={2}>
-          <NextLink href='/' passHref>
-            <Link pr={2}>
-              <Icon as={FaFacebookSquare} boxSize={6} />
-            </Link>
-          </NextLink>
+          <Link pr={2}>
+            <Icon as={FaFacebookSquare} boxSize={6} />
+          </Link>
 
           <Link
             href='https://instagram.com/culturecurations'
@@ -59,26 +58,26 @@ const Footer = () => {
           >
             <Icon as={FaInstagram} boxSize={6} />
           </Link>
-          <NextLink href='/' passHref>
-            <Link px={2}>
-              <Icon as={FaSnapchatGhost} boxSize={6} />
-            </Link>
-          </NextLink>
-          <NextLink href='/' passHref>
-            <Link px={2}>
-              <Icon as={FaTwitter} boxSize={6} />
-            </Link>
-          </NextLink>
-          <NextLink href='/' passHref>
-            <Link px={2}>
-              <Icon as={FaYoutube} boxSize={7} />
-            </Link>
-          </NextLink>
-          <NextLink href='/' passHref>
-            <Link pl={2}>
-              <Icon as={SiAudiomack} boxSize={7} />
-            </Link>
-          </NextLink>
+
+          <Link px={2}>
+            <Icon as={FaSnapchatGhost} boxSize={6} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={FaTwitter} boxSize={6} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={FaYoutube} boxSize={7} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={SiAudiomack} boxSize={7} />
+          </Link>
+
+          <Link pl={2}>
+            <Icon as={FaSpotify} boxSize={7} />
+          </Link>
         </Flex>
         <Text
           fontSize={{ base: 'sm', md: 'md' }}
