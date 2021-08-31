@@ -52,6 +52,7 @@ const MobileDrawer = ({ onClose }) => {
                 d='block'
                 py={4}
                 color='gray.600'
+                onClick={onClose}
               >
                 <Text fontWeight='bold' fontSize='2xl'>
                   {item.title}

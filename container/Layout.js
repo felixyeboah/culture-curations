@@ -29,7 +29,9 @@ const Layout = ({ children, title, description, ...rest }) => {
           cardType: 'summary_large_image',
         }}
       />
-      <Box {...rest}>{children}</Box>
+      <Box {...rest} minH='100vh'>
+        {children}
+      </Box>
     </Box>
   );
 };

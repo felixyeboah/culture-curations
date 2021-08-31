@@ -21,7 +21,7 @@ const Footer = () => {
       w='100%'
       color={pathname === '/' ? 'white' : 'gray.600'}
       fontWeight='bold'
-      pos='fixed'
+      pos={pathname === '/' ? 'fixed' : 'relative'}
       bottom={6}
       px={{ base: 4, md: 20 }}
       zIndex={20}
@@ -50,11 +50,15 @@ const Footer = () => {
               <Icon as={FaFacebookSquare} boxSize={6} />
             </Link>
           </NextLink>
-          <NextLink href='/' passHref>
-            <Link px={2}>
-              <Icon as={FaInstagram} boxSize={6} />
-            </Link>
-          </NextLink>
+
+          <Link
+            href='https://instagram.com/culturecurations'
+            isExternal
+            _hover={{ textDecor: 'none' }}
+            px={2}
+          >
+            <Icon as={FaInstagram} boxSize={6} />
+          </Link>
           <NextLink href='/' passHref>
             <Link px={2}>
               <Icon as={FaSnapchatGhost} boxSize={6} />
