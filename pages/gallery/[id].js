@@ -19,7 +19,7 @@ const Gallery = () => {
         <Heading>Images for October</Heading>
       </Box>
 
-      <Box mt={{ base: 10, md: 20 }}>
+      <Box my={{ base: 10, md: 20 }}>
         <SRLWrapper>
           <Masonry
             breakpointCols={breakpointColumnsObj}
