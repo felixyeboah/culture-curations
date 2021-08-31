@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo';
 
 const Layout = ({ children, title, description, ...rest }) => {
   return (
-    <Box>
+    <Box overflow='hidden'>
       <NextSeo
         title={`${title} | Culture Curations`}
         description={description}
