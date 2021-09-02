@@ -13,23 +13,18 @@ const data = [
   },
   {
     id: 3,
-    title: 'Tickets',
-    link: '/tickets',
-  },
-  {
-    id: 4,
     title: 'Merchandise',
     link: '/merchandise',
   },
   {
-    id: 5,
+    id: 4,
     title: 'Gallery',
     link: '/gallery ',
   },
   {
-    id: 6,
+    id: 5,
     title: 'Login',
-    link: '/login',
+    link: '/auth/login',
   },
 ];
 

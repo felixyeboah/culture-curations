@@ -26,6 +26,10 @@ const Footer = () => {
       bottom={6}
       px={{ base: 4, md: 20 }}
       zIndex={20}
+      d={{
+        base: 'none',
+        sm: pathname === '/auth/register' || '/auth/login' ? '' : 'flex',
+      }}
     >
       <Flex align='center' d={{ base: 'none', sm: 'flex' }}>
         <NextLink href='/events' passHref>
@@ -33,14 +37,14 @@ const Footer = () => {
             Events
           </Link>
         </NextLink>
-        <NextLink href='/tickets'>
-          <Link _hover={{ textDecor: 'none' }} px={4}>
-            Tickets
-          </Link>
-        </NextLink>
         <NextLink href='/merchandise'>
           <Link _hover={{ textDecor: 'none' }} pl={4}>
             Merchandise
+          </Link>
+        </NextLink>
+        <NextLink href='/gallery' passHref>
+          <Link _hover={{ textDecor: 'none' }} px={4}>
+            Gallery
           </Link>
         </NextLink>
       </Flex>
@@ -90,11 +94,6 @@ const Footer = () => {
         </Text>
       </Flex>
       <Flex align='center' d={{ base: 'none', sm: 'flex' }}>
-        <NextLink href='/gallery' passHref>
-          <Link _hover={{ textDecor: 'none' }} px={4}>
-            Gallery
-          </Link>
-        </NextLink>
         <NextLink href='/about' passHref>
           <Link _hover={{ textDecor: 'none' }} px={4}>
             About

@@ -19,7 +19,10 @@ const Navbar = () => {
       w='100%'
       color={pathname === '/' ? 'white' : 'black'}
       fontWeight='bold'
-      d={{ base: 'none', sm: 'flex' }}
+      d={{
+        base: 'none',
+        sm: pathname === '/auth/register' || '/auth/login' ? '' : 'flex',
+      }}
     >
       <NextLink href='/' passHref>
         <Link _hover={{ textDecor: 'none' }}>
@@ -39,8 +42,23 @@ const Navbar = () => {
       </Box>
       <Flex align='center'>
         <Box px={{ md: 6 }}>Login</Box>
-        <Box>
+        <Box pos='relative'>
           <Icon as={BsBagFill} boxSize={6} />
+          <Flex
+            align='center'
+            justify='center'
+            fontSize='xs'
+            w={4}
+            h={4}
+            rounded='full'
+            bg='red.600'
+            color='white'
+            pos='absolute'
+            right={-2}
+            top={0}
+          >
+            0
+          </Flex>
         </Box>
       </Flex>
     </Flex>
