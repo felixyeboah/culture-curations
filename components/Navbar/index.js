@@ -44,7 +44,11 @@ const Navbar = () => {
         </Heading>
       </Box>
       <Flex align='center'>
-        <Box px={{ md: 6 }}>Login</Box>
+        <Box px={{ md: 6 }}>
+          <NextLink href='/auth/login' passHref>
+            <Link _hover={{ textDecor: 'none' }}>Login</Link>
+          </NextLink>
+        </Box>
         <Box pos='relative'>
           <Icon as={BsBagFill} boxSize={6} />
           <Flex
