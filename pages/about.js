@@ -10,7 +10,7 @@ const About = () => {
       px={{ base: 4, md: 24 }}
     >
       <Box>
-        <Heading>About Culture Curations</Heading>
+        <Heading>About</Heading>
       </Box>
 
       <Box mt={{ base: 10, md: 20 }}>
