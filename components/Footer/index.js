@@ -28,7 +28,10 @@ const Footer = () => {
       zIndex={20}
       d={{
         base: 'none',
-        sm: pathname === '/auth/register' || '/auth/login' ? '' : 'flex',
+        sm:
+          pathname === '/auth/register' || pathname === '/auth/login'
+            ? ''
+            : 'flex',
       }}
     >
       <Flex align='center' d={{ base: 'none', sm: 'flex' }}>

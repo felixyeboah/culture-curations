@@ -21,7 +21,10 @@ const Navbar = () => {
       fontWeight='bold'
       d={{
         base: 'none',
-        sm: pathname === '/auth/register' || '/auth/login' ? '' : 'flex',
+        sm:
+          pathname === '/auth/register' || pathname === '/auth/login'
+            ? ''
+            : 'flex',
       }}
     >
       <NextLink href='/' passHref>
