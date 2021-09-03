@@ -29,7 +29,9 @@ const Footer = () => {
       d={{
         base: 'none',
         sm:
-          pathname === '/auth/register' || pathname === '/auth/login'
+          pathname === '/auth/register' ||
+          pathname === '/auth/login' ||
+          pathname === '/auth/forgot-password'
             ? ''
             : 'flex',
       }}
