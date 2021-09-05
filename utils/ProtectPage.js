@@ -6,8 +6,11 @@ export function withPublic(Component) {
     const auth = useAuth();
     const router = useRouter();
 
-    if (!auth.loading && auth.isAuthenticated) {
+    if (!auth.loading && auth.active === true) {
       router.push('/dashboard');
+      return <p>loading...</p>;
+    } else if (!auth.loading && auth.emailSent === true) {
+      router.push('/auth/verify');
       return <p>loading...</p>;
     }
 
@@ -20,7 +23,7 @@ export function withPrivate(Component) {
     const auth = useAuth();
     const router = useRouter();
 
-    if (!auth.loading && !auth.isAuthenticated) {
+    if (!auth.loading && auth.active === false) {
       router.push('/auth/login');
       return <p>loading...</p>;
     }

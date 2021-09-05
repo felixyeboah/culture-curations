@@ -13,6 +13,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState('');
+  const [active, setActive] = useState();
+  const [emailSent, setEmailSent] = useState();
 
   const toast = useToast();
 
@@ -26,6 +28,8 @@ export const AuthProvider = ({ children }) => {
         api.defaults.headers.Authorization = `Bearer ${token}`;
         if (user) {
           setUser(user);
+          setActive(user.active);
+          setEmailSent(user.emailSent);
         }
         // console.log('Got user', user);
       }
@@ -162,6 +166,8 @@ export const AuthProvider = ({ children }) => {
       value={{
         isAuthenticated: !!user,
         user,
+        active,
+        emailSent,
         signin,
         loading,
         logout,
