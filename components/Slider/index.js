@@ -53,7 +53,7 @@ const HomeSlider = () => {
         justify='center'
         w='100vw'
         pos='absolute'
-        bottom={-56}
+        bottom={{ base: -48, md: -56 }}
         right={0}
         left={0}
         color='white'

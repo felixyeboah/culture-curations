@@ -31,7 +31,9 @@ const Footer = () => {
         sm:
           pathname === '/auth/register' ||
           pathname === '/auth/login' ||
-          pathname === '/auth/forgot-password'
+          pathname === '/auth/forgot-password' ||
+          pathname === '/auth/reset-password/[id]' ||
+          pathname === '/dashboard'
             ? ''
             : 'flex',
       }}

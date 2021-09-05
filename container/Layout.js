@@ -1,8 +1,11 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 
 const Layout = ({ children, title, description, ...rest }) => {
+  const { pathname } = useRouter();
+
   return (
     <Box overflow='hidden'>
       <NextSeo
@@ -29,7 +32,12 @@ const Layout = ({ children, title, description, ...rest }) => {
           cardType: 'summary_large_image',
         }}
       />
-      <Box {...rest} minH='100vh'>
+      <Box
+        {...rest}
+        minH={
+          pathname === '/auth/verify' || pathname === '/404' ? '80vh' : '92vh'
+        }
+      >
         {children}
       </Box>
     </Box>

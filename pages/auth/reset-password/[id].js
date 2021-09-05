@@ -1,32 +1,27 @@
 import React from 'react';
 import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
-import {
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  Link,
-  Text,
-} from '@chakra-ui/layout';
+import { Box, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/layout';
 import FormInput from '@components/Form/FormInput';
 import { Formik } from 'formik';
-import NextLink from 'next/link';
 import Layout from 'container/Layout';
 import { withPublic } from '@utils/ProtectPage';
 import useAuth from '@context/userContext';
-import { ForgotPasswordSchema } from '@utils/validation';
+import { ResetPasswordSchema } from '@utils/validation';
+import { useRouter } from 'next/router';
 
-const ForgotPassword = () => {
-  const { forgotPassword } = useAuth();
+const ResetPassword = () => {
+  const { resetPassword } = useAuth();
+
+  const router = useRouter();
+  const { id } = router.query;
 
   const onSubmit = async (
     values,
     { setSubmitting, setErrors, setStatus, resetForm }
   ) => {
     try {
-      await forgotPassword(values);
+      await resetPassword(values);
       resetForm({});
       setStatus({ success: true });
     } catch (error) {
@@ -73,14 +68,16 @@ const ForgotPassword = () => {
             </Box>
             <Box mb={8}>
               <Heading as='h4' fontSize={{ base: 'xl', md: '2xl' }}>
-                Forgot password
+                Reset your password
               </Heading>
             </Box>
             <Formik
+              enableReinitialize
               initialValues={{
-                email: '',
+                resetCode: id,
+                password: '',
               }}
-              validationSchema={ForgotPasswordSchema}
+              validationSchema={ResetPasswordSchema}
               onSubmit={onSubmit}
             >
               {({
@@ -96,15 +93,26 @@ const ForgotPassword = () => {
                 <form onSubmit={handleSubmit}>
                   <Grid gap={4}>
                     <FormInput
-                      label='Email'
-                      type='email'
-                      placeholder='example@email.com'
-                      name='email'
-                      value={values.email}
+                      label='Reset Code'
+                      placeholder='000000'
+                      name='resetCode'
+                      value={values.resetCode}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      error={errors.email}
-                      touched={touched.email}
+                      error={errors.resetCode}
+                      touched={touched.resetCode}
+                      disabled
+                    />
+                    <FormInput
+                      label='Password'
+                      type='password'
+                      placeholder='**********'
+                      name='password'
+                      value={values.password}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={errors.password}
+                      touched={touched.password}
                     />
 
                     <Button
@@ -117,16 +125,6 @@ const ForgotPassword = () => {
                     >
                       Submit
                     </Button>
-                    <Box>
-                      <Text fontSize='sm' textAlign='center'>
-                        Remember your password?{' '}
-                        <NextLink href='/auth/login' passHref>
-                          <Link color='blue.500' _hover={{ textDecor: 'none' }}>
-                            Log in
-                          </Link>
-                        </NextLink>
-                      </Text>
-                    </Box>
                   </Grid>
                 </form>
               )}
@@ -138,4 +136,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default withPublic(ForgotPassword);
+export default withPublic(ResetPassword);
