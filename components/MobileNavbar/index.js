@@ -17,7 +17,13 @@ const MobileNavbar = ({ onOpen }) => {
       top={0}
       zIndex={10}
       w='100%'
-      color={pathname === '/' ? 'white' : 'black'}
+      color={
+        pathname === '/' ||
+        pathname === '/events' ||
+        pathname === '/events/[id]'
+          ? 'white'
+          : 'black'
+      }
       fontWeight='bold'
       d={{ base: 'flex', sm: 'none' }}
     >
@@ -40,7 +46,11 @@ const MobileNavbar = ({ onOpen }) => {
           <Image
             h={{ base: 16, md: 24 }}
             src={
-              pathname === '/' ? '/images/logo.png' : '/images/logo-black.png'
+              pathname === '/' ||
+              pathname === '/events' ||
+              pathname === '/events/[id]'
+                ? '/images/logo.png'
+                : '/images/logo-black.png'
             }
             alt='logo'
           />

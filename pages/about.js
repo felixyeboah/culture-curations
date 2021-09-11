@@ -13,8 +13,8 @@ const About = () => {
         <Heading>About</Heading>
       </Box>
 
-      <Box mt={{ base: 10, md: 20 }}>
-        <Text>
+      <Box mt={{ base: 10, md: 12 }} w={{ md: 125 }}>
+        <Text fontSize={{ md: 'lg' }}>
           Culture Management Group LLC is an experiential production company
           that prioritizes celebration of Africa’s diverse culture and the
           vibrant work of African creatives &amp; entrepreneurs. The company

@@ -8,6 +8,7 @@ class MyDocument extends Document {
           <link href='/favicon.ico' rel='shortcut icon' />
           <link href='/static/favicons/site.webmanifest' rel='manifest' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
+          <link href='/fonts/fonts.css' rel='stylesheet' />
           <link
             href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap'
             rel='stylesheet'

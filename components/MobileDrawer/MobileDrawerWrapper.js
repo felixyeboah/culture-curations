@@ -16,7 +16,7 @@ const MobileDrawerWrapper = ({ children }) => {
       pos='fixed'
       inset={0}
       bg='rgba(0,0,0,.5)'
-      zIndex={20}
+      zIndex={50}
     >
       <MotionBox
         initial={{ x: -400 }}
