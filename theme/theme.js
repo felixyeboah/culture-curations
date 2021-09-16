@@ -27,7 +27,7 @@ export const theme = extendTheme({
   },
   breakpoints,
   fonts: {
-    heading: '"TTFirsNeue" ,sans-serif',
+    heading: '"Poppins" ,sans-serif',
     body: '"Poppins", sans-serif',
     text: '"Colfax", sans-serif',
   },
@@ -54,6 +54,10 @@ export const theme = extendTheme({
     },
     blue: {
       dark: '#2D4298',
+    },
+    brandBlue: {
+      500: '#2D4298',
+      600: '#2D4298',
     },
   },
   space: {
@@ -119,9 +123,5 @@ export const theme = extendTheme({
     143: '72rem',
     145: '76rem',
     150: '80rem',
-  },
-  shadows: {
-    1000: '0 10px 20px 0 rgba(97, 111, 57, 0.5)',
-    2000: '10px 10px 20px 0 rgba(0, 0, 0, 0.1);',
   },
 });

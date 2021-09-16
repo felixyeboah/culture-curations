@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6d9ab934-31e5-4508-9ad9-5ffaf617c45c" name="Changes" comment="changes">
+      <change afterPath="$PROJECT_DIR$/culturecurations/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/config/.checksums" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/config/@sanity/data-aspects.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/config/@sanity/default-layout.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/config/@sanity/default-login.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/config/@sanity/form-builder.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/config/media-library.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/parts/assetSources.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/plugins/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/sanity.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/schemas/gallery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/schemas/schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/schemas/slides.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/static/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culturecurations/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Headers/EventsHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Headers/EventsHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Slider/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Slider/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sanity.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sanity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gallery/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gallery/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +62,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/Cellar/prettier/2.3.1/libexec/lib/node_modules/prettier" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/Cellar/prettier/2.4.0/libexec/lib/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -46,7 +78,7 @@
       <recent name="$PROJECT_DIR$/pages" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -57,9 +89,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/culturecurations/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -79,6 +122,9 @@
       <workItem from="1630127306057" duration="6456000" />
       <workItem from="1630164698383" duration="197000" />
       <workItem from="1630204326308" duration="133000" />
+      <workItem from="1631433703756" duration="77000" />
+      <workItem from="1631433788899" duration="155000" />
+      <workItem from="1631435502534" duration="2446000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1630127480690</created>

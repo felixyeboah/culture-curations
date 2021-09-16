@@ -30,7 +30,7 @@ const EventsHeader = ({ details }) => {
         w={{ md: 130 }}
       >
         <Heading as='h2' fontSize={{ base: '3xl', md: '6xl' }}>
-          Checkout our monthly events
+          Events
         </Heading>
         {details && (
           <Flex align='center' fontSize={{ md: 'xl' }}>

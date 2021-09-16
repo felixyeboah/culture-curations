@@ -8,7 +8,7 @@ import {
   FaYoutube,
   FaSpotify,
 } from 'react-icons/fa';
-import { SiAudiomack } from 'react-icons/si';
+import { SiApplemusic, SiAudiomack } from 'react-icons/si';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -33,7 +33,13 @@ const Footer = () => {
           pathname === '/auth/login' ||
           pathname === '/auth/forgot-password' ||
           pathname === '/auth/reset-password/[id]' ||
-          pathname === '/dashboard'
+          pathname === '/dashboard' ||
+          pathname === '/manage-slides' ||
+          pathname === '/manage-users' ||
+          pathname === '/my-events' ||
+          pathname === '/manage-slides/upload' ||
+          pathname === '/manage-images' ||
+          pathname === '/manage-images/upload'
             ? ''
             : 'flex',
       }}
@@ -86,12 +92,16 @@ const Footer = () => {
             <Icon as={SiAudiomack} boxSize={7} />
           </Link>
 
+          <Link px={2}>
+            <Icon as={SiApplemusic} boxSize={7} />
+          </Link>
+
           <Link pl={2}>
             <Icon as={FaSpotify} boxSize={7} />
           </Link>
         </Flex>
         <Text
-          fontSize={{ base: 'sm', md: 'md' }}
+          fontSize='sm'
           textAlign='center'
           mixBlendMode='difference'
           fontWeight='light'

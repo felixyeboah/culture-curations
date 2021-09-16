@@ -13,8 +13,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState('');
-  const [active, setActive] = useState();
-  const [emailSent, setEmailSent] = useState();
+  const [active, setActive] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
 
   const toast = useToast();
 
@@ -43,8 +43,10 @@ export const AuthProvider = ({ children }) => {
       const { data } = await api.post('/users/login', params);
       if (data) {
         Cookies.set('_token', data.token);
+        localStorage.setItem('_token', data.token);
         setToken(data.token);
         api.defaults.headers.Authorization = `Bearer ${data.token}`;
+        Cookies.set('_user', JSON.stringify(data.data.user));
         window.localStorage.setItem('_user', JSON.stringify(data.data.user));
         if (data.data.user.emailSent) {
           router.push('/auth/verify');
@@ -75,6 +77,7 @@ export const AuthProvider = ({ children }) => {
       const { data } = await api.post('/users/register', params);
       if (data) {
         Cookies.set('_token', JSON.stringify(data.token));
+        localStorage.setItem('_token', JSON.stringify(data.token));
         setToken(data.token);
         api.defaults.headers.Authorization = `Bearer ${data.token}`;
         toast({
@@ -154,17 +157,28 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const isAuthenticated = () => {
+    const _token = Cookies.get('_token');
+    const _user = Cookies.get('_user');
+    if (_token && _user) {
+      return { token: _token, user: JSON.parse(_user) };
+    } else {
+      return {};
+    }
+  };
+
   const logout = () => {
     Cookies.remove('_token');
+    Cookies.remove('_user');
     setUser(null);
     delete api.defaults.headers.Authorization;
-    window.location.pathname = '/auth/login';
+    window.location.pathname = '/';
   };
 
   return (
     <AuthContext.Provider
       value={{
-        isAuthenticated: !!user,
+        isAuthenticated,
         user,
         active,
         emailSent,

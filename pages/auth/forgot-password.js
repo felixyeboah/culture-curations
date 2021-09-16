@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
 import {
   Box,
@@ -17,6 +16,7 @@ import Layout from 'container/Layout';
 import { withPublic } from '@utils/ProtectPage';
 import useAuth from '@context/userContext';
 import { ForgotPasswordSchema } from '@utils/validation';
+import Button from '@components/Button';
 
 const ForgotPassword = () => {
   const { forgotPassword } = useAuth();
@@ -108,15 +108,12 @@ const ForgotPassword = () => {
                     />
 
                     <Button
-                      w='100%'
-                      colorScheme='blue'
-                      h={12}
+                      title='Submit'
                       type='submit'
                       disabled={!dirty}
                       isLoading={isSubmitting}
-                    >
-                      Submit
-                    </Button>
+                      w='100%'
+                    />
                     <Box>
                       <Text fontSize='sm' textAlign='center'>
                         Remember your password?{' '}

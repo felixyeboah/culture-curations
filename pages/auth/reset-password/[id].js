@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
 import { Box, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/layout';
 import FormInput from '@components/Form/FormInput';
@@ -9,6 +8,7 @@ import { withPublic } from '@utils/ProtectPage';
 import useAuth from '@context/userContext';
 import { ResetPasswordSchema } from '@utils/validation';
 import { useRouter } from 'next/router';
+import Button from '@components/Button';
 
 const ResetPassword = () => {
   const { resetPassword } = useAuth();
@@ -116,15 +116,12 @@ const ResetPassword = () => {
                     />
 
                     <Button
-                      w='100%'
-                      colorScheme='blue'
-                      h={12}
+                      title='Submit'
                       type='submit'
                       disabled={!dirty}
                       isLoading={isSubmitting}
-                    >
-                      Submit
-                    </Button>
+                      w='100%'
+                    />
                   </Grid>
                 </form>
               )}

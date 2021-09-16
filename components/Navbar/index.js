@@ -9,6 +9,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import useAuth from '@context/userContext';
+import isEmpty from 'lodash/isEmpty';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -44,7 +45,13 @@ const Navbar = () => {
           pathname === '/auth/login' ||
           pathname === '/auth/forgot-password' ||
           pathname === '/auth/reset-password/[id]' ||
-          pathname === '/dashboard'
+          pathname === '/dashboard' ||
+          pathname === '/manage-slides' ||
+          pathname === '/manage-users' ||
+          pathname === '/my-events' ||
+          pathname === '/manage-slides/upload' ||
+          pathname === '/manage-images' ||
+          pathname === '/manage-images/upload'
             ? ''
             : 'flex',
       }}
@@ -70,12 +77,15 @@ const Navbar = () => {
         </Heading>
       </Box>
       <Flex align='center'>
-        {isAuthenticated ? (
+        {!isEmpty(isAuthenticated()) ? (
           <Flex align='center' px={{ md: 6 }}>
             <Flex align='center' px={{ md: 6 }}>
-              <Avatar src='' size='sm' />
+              <Avatar
+                src={`https://ui-avatars.com/api/?background=random&name=${user?.firstName}+${user?.lastName}`}
+                size='sm'
+              />
               <Text ml={2}>
-                {user.firstName} {user.lastName}
+                {user?.firstName} {user?.lastName}
               </Text>
             </Flex>
 

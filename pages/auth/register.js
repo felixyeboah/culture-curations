@@ -1,6 +1,6 @@
-import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
 import { Box, Flex, Grid, GridItem, Heading, Text } from '@chakra-ui/layout';
+import Button from '@components/Button';
 import FormInput from '@components/Form/FormInput';
 import useAuth from '@context/userContext';
 import { withPublic } from '@utils/ProtectPage';
@@ -144,15 +144,12 @@ const Register = () => {
                       touched={touched.password}
                     />
                     <Button
-                      w='100%'
-                      colorScheme='blue'
-                      h={12}
+                      title='Submit'
                       type='submit'
                       disabled={!dirty}
                       isLoading={isSubmitting}
-                    >
-                      Submit
-                    </Button>
+                      w='100%'
+                    />
                   </Grid>
                 </form>
               )}

@@ -1,6 +1,8 @@
+import { Image } from '@chakra-ui/image';
+import { Box, Flex, Link, Text } from '@chakra-ui/layout';
 import useAuth from '@context/userContext';
 import { withPrivate } from '@utils/ProtectPage';
-import Layout from 'container/Layout';
+import AuthLayout from 'container/AuthLayout';
 import React from 'react';
 
 const Dashboard = () => {
@@ -10,9 +12,9 @@ const Dashboard = () => {
   console.log('active', active);
 
   return (
-    <Layout title='Dashboard'>
-      <p>Dashboard</p>
-    </Layout>
+    <AuthLayout title='Dashboard'>
+      <p>Home</p>
+    </AuthLayout>
   );
 };
 

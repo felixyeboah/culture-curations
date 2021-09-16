@@ -1,4 +1,3 @@
-import { Button } from '@chakra-ui/button';
 import { Image } from '@chakra-ui/image';
 import {
   Box,
@@ -17,6 +16,7 @@ import Layout from 'container/Layout';
 import { SignInSchema } from '@utils/validation';
 import useAuth from '@context/userContext';
 import { withPublic } from '@utils/ProtectPage';
+import Button from '@components/Button';
 
 const Login = () => {
   const { signin } = useAuth();
@@ -132,15 +132,12 @@ const Login = () => {
                         </Link>
                       </NextLink>
                       <Button
-                        w='100%'
-                        colorScheme='blue'
-                        h={12}
+                        title='Submit'
                         type='submit'
                         disabled={!dirty}
                         isLoading={isSubmitting}
-                      >
-                        Submit
-                      </Button>
+                        w='100%'
+                      />
                     </Box>
                     <Box>
                       <Text fontSize='sm' textAlign='center'>

@@ -1,6 +1,7 @@
 import Icon from '@chakra-ui/icon';
 import { Flex, Link, Text } from '@chakra-ui/layout';
 import HomeSlider from '@components/Slider';
+import api from '@utils/api';
 import Layout from 'container/Layout';
 import {
   FaFacebookSquare,
@@ -10,12 +11,12 @@ import {
   FaYoutube,
   FaSpotify,
 } from 'react-icons/fa';
-import { SiAudiomack } from 'react-icons/si';
+import { SiApplemusic, SiAudiomack } from 'react-icons/si';
 
-export default function Home() {
+export default function Home({ slides }) {
   return (
     <Layout title='Home'>
-      <HomeSlider />
+      <HomeSlider slides={slides} />
       <Flex
         direction='column'
         align='center'
@@ -55,6 +56,10 @@ export default function Home() {
             <Icon as={SiAudiomack} boxSize={7} />
           </Link>
 
+          <Link px={2}>
+            <Icon as={SiApplemusic} boxSize={7} />
+          </Link>
+
           <Link pl={2}>
             <Icon as={FaSpotify} boxSize={7} />
           </Link>
@@ -70,4 +75,13 @@ export default function Home() {
       </Flex>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const res = await api.get('/slides');
+  const slides = res.data;
+  return {
+    props: { slides },
+    revalidate: 1,
+  };
 }
