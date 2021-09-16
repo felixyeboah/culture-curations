@@ -35,7 +35,7 @@ export const ApiProvider = ({ children }) => {
 
   const deleteSlide = async (payload) => {
     try {
-      const res = await api.delete('/slides', payload);
+      const res = await api.post('/slides', payload);
       if (res.status === 204) {
         toast({
           description: 'Images deleted successfully!',
