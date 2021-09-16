@@ -67,9 +67,32 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const deleteGallery = async (payload) => {
+    try {
+      const res = await api.patch('/gallery', payload);
+      if (res.status === 204) {
+        toast({
+          description: 'Images deleted successfully!',
+          status: 'success',
+          duration: 9000,
+          position: 'top-right',
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <ApiContext.Provider
-      value={{ uploadSlides, getSlides, deleteSlide, createGallery }}
+      value={{
+        uploadSlides,
+        getSlides,
+        deleteSlide,
+        createGallery,
+        deleteGallery,
+      }}
     >
       {children}
     </ApiContext.Provider>

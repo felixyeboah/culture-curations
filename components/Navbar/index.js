@@ -53,7 +53,8 @@ const Navbar = () => {
           pathname === '/manage-images' ||
           pathname === '/manage-images/upload' ||
           pathname === '/manage-gallery' ||
-          pathname === '/manage-gallery/upload'
+          pathname === '/manage-gallery/upload' ||
+          pathname === '/manage-gallery/[slug]'
             ? ''
             : 'flex',
       }}

@@ -73,10 +73,6 @@ const ManageSlides = () => {
                       role='button'
                       aria-label='remove button'
                       onClick={() => {
-                        var raw = JSON.stringify({
-                          key: img,
-                        });
-                        console.log('raw', img);
                         mutateDeleteSlide.mutateAsync({ public_id: img });
                       }}
                     >
