@@ -18,7 +18,7 @@ const Gallery = ({ gallery }) => {
 
   return (
     <Layout
-      title={gallery.title}
+      title={gallery?.title}
       pt={{ base: 24, md: 48 }}
       px={{ base: 4, md: 24 }}
     >
