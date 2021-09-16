@@ -4,7 +4,7 @@ import {
   Grid,
   Heading,
   IconButton,
-  Image,
+  Image as ChakraImage,
   Link,
   Text,
 } from '@chakra-ui/react';
@@ -12,9 +12,11 @@ import Layout from 'container/Layout';
 import React from 'react';
 import NextLink from 'next/link';
 import { BiChevronRight } from 'react-icons/bi';
-import { API } from '@utils/constants';
+import api from '@utils/api';
+import { Image } from 'cloudinary-react';
 
 const Galleries = ({ allImages }) => {
+  console.log('images', allImages);
   return (
     <Layout title='Gallery' pt={{ base: 24, md: 48 }} px={{ base: 4, md: 24 }}>
       <Box>
@@ -28,14 +30,16 @@ const Galleries = ({ allImages }) => {
       >
         {allImages.map((item) => (
           <Box mt={3} h={115} pos='relative' key={item.id}>
-            <Image
-              rounded='md'
-              src={item.cover[0].formats.large.url}
-              alt={item.cover[0].name}
-              loading='lazy'
-              h='100%'
+            <ChakraImage
+              as={Image}
+              cloudName='lunar-studios'
+              publicId={item.cover}
+              height='100%'
               w='100%'
-              fit='cover'
+              rounded='md'
+              objectFit='cover'
+              loading='lazy'
+              overflow='hidden'
             />
             <NextLink href={`/gallery/${item.slug}`}>
               <Link d='block' w='100%' _hover={{ textDecor: 'none' }}>
@@ -70,9 +74,9 @@ const Galleries = ({ allImages }) => {
   );
 };
 
-export async function getStaticProps({ preview = false }) {
-  const res = await fetch(`${API}/galleries`);
-  const allImages = await res.json();
+export async function getStaticProps() {
+  const res = await api.get('/gallery');
+  const allImages = res.data;
   return {
     props: {
       allImages,

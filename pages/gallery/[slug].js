@@ -1,11 +1,14 @@
-import { Box, Heading, Image } from '@chakra-ui/react';
+import { Box, Heading, Image as ChakraImage } from '@chakra-ui/react';
 import Layout from 'container/Layout';
 import React from 'react';
 import Masonry from 'react-masonry-css';
 import { SRLWrapper } from 'simple-react-lightbox';
-import { API } from '@utils/constants';
+import { Image } from 'cloudinary-react';
+import api from '@utils/api';
 
 const Gallery = ({ gallery }) => {
+  console.log('gallery', gallery);
+
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
@@ -30,13 +33,19 @@ const Gallery = ({ gallery }) => {
             className='my-masonry-grid'
             columnClassName='my-masonry-grid_column'
           >
-            {gallery.images.map((image) => (
-              <Box key={image._key}>
-                <Image
-                  cursor='zoom-in'
-                  src={image.url}
-                  alt={gallery.title}
+            {gallery.images.map((image, idx) => (
+              <Box key={idx}>
+                <ChakraImage
+                  as={Image}
+                  cloudName='lunar-studios'
+                  publicId={image}
+                  height='100%'
+                  w='100%'
+                  rounded='md'
+                  objectFit='cover'
                   loading='lazy'
+                  overflow='hidden'
+                  cursor='zoom-in'
                 />
               </Box>
             ))}
@@ -48,19 +57,19 @@ const Gallery = ({ gallery }) => {
 };
 
 export async function getStaticProps({ params: { slug } }) {
-  const res = await fetch(`${API}/galleries?slug=${slug}`);
-  const gallery = await res.json();
+  const res = await api.get(`/gallery/${slug}`);
+  const gallery = res.data;
   return {
     props: {
-      gallery: gallery[0],
+      gallery: gallery,
     },
     revalidate: 1,
   };
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${API}/galleries`);
-  const allImages = await res.json();
+  const res = await api.get('/gallery');
+  const allImages = res.data;
 
   const paths = allImages.map((img) => ({ params: { slug: img.slug } }));
 

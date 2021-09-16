@@ -39,7 +39,9 @@ const Footer = () => {
           pathname === '/my-events' ||
           pathname === '/manage-slides/upload' ||
           pathname === '/manage-images' ||
-          pathname === '/manage-images/upload'
+          pathname === '/manage-images/upload' ||
+          pathname === '/manage-gallery' ||
+          pathname === '/manage-gallery/upload'
             ? ''
             : 'flex',
       }}

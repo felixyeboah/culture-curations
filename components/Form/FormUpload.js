@@ -11,12 +11,12 @@ import {
 import { Image } from '@chakra-ui/image';
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
-import { BsTrash, BsX } from 'react-icons/bs';
+import { BsTrash } from 'react-icons/bs';
 import PropTypes from 'prop-types';
 import { BiMenu } from 'react-icons/bi';
 import Masonry from 'react-masonry-css';
 
-const FormUpload = ({ files, setFiles, setFile, label, value }) => {
+const FormUpload = ({ files, setFiles, setFile, label, required }) => {
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
@@ -82,7 +82,7 @@ const FormUpload = ({ files, setFiles, setFile, label, value }) => {
   );
 
   return (
-    <FormControl mt={10}>
+    <FormControl isRequired={required}>
       <FormLabel color='gray.500' fontSize='sm'>
         {label}
       </FormLabel>
@@ -92,10 +92,10 @@ const FormUpload = ({ files, setFiles, setFile, label, value }) => {
             <Input {...getInputProps()} />
             {files.length === 0 && (
               <Text
-                color='blue.dark'
+                color='gray.700'
                 fontSize='sm'
                 borderWidth={1}
-                borderColor='blue.dark'
+                borderColor='gray.700'
                 rounded='md'
                 p={20}
               >

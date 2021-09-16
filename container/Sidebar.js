@@ -11,7 +11,7 @@ const menuItems = [
   { id: 4, name: 'My Account', path: '/my-account' },
   { id: 5, name: 'Manage Events', path: '/manage-events' },
   { id: 6, name: 'Manage Slides', path: '/manage-slides' },
-  { id: 7, name: 'Manage Images', path: '/manage-images' },
+  { id: 7, name: 'Manage Gallery', path: '/manage-gallery' },
   { id: 8, name: ' Manage Bookings', path: '/manage-bookings' },
   { id: 9, name: 'Manage Users', path: '/manage-users' },
 ];

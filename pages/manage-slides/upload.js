@@ -56,7 +56,14 @@ const ManageSlidesUpload = () => {
       >
         {({ isSubmitting, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            <FormUpload files={files} setFiles={setFiles} setFile={setFile} />
+            <Box mt={10}>
+              <FormUpload
+                required
+                files={files}
+                setFiles={setFiles}
+                setFile={setFile}
+              />
+            </Box>
 
             <Box pos='fixed' bottom={10} right={6}>
               <Button
