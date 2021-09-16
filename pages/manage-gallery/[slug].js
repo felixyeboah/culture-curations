@@ -23,7 +23,7 @@ const ManageGallery = ({ gallery }) => {
   return (
     <AuthLayout title='Manage Gallery'>
       <Box>
-        <Heading as='h4'>Photos for {gallery.title}</Heading>
+        <Heading as='h4'>Photos for {gallery?.title}</Heading>
       </Box>
 
       <Box mt={20}>
@@ -32,7 +32,7 @@ const ManageGallery = ({ gallery }) => {
           className='my-masonry-grid'
           columnClassName='my-masonry-grid_column'
         >
-          {gallery.images.map((image, idx) => (
+          {gallery?.images?.map((image, idx) => (
             <Box key={idx} p={2}>
               <ChakraImage
                 as={Image}

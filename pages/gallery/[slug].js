@@ -23,7 +23,7 @@ const Gallery = ({ gallery }) => {
       px={{ base: 4, md: 24 }}
     >
       <Box>
-        <Heading>Photos for {gallery.title}</Heading>
+        <Heading>Photos for {gallery?.title}</Heading>
       </Box>
 
       <Box my={{ base: 10, md: 20 }}>
@@ -33,7 +33,7 @@ const Gallery = ({ gallery }) => {
             className='my-masonry-grid'
             columnClassName='my-masonry-grid_column'
           >
-            {gallery.images.map((image, idx) => (
+            {gallery?.images?.map((image, idx) => (
               <Box key={idx}>
                 <ChakraImage
                   as={Image}
