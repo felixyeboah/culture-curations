@@ -3,6 +3,7 @@ import { Box, Flex, Link, List, ListItem, Text } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/image';
 import ActiveLink from 'lib/ActiveLink';
 import NextLink from 'next/link';
+import useAuth from '@context/userContext';
 
 const menuItems = [
   { id: 1, name: 'Home', path: '/dashboard' },
@@ -17,6 +18,7 @@ const menuItems = [
 ];
 
 const Sidebar = () => {
+  const { logout } = useAuth();
   return (
     <Flex
       direction='column'
@@ -72,6 +74,7 @@ const Sidebar = () => {
         rounded='full'
         textAlign='center'
         fontSize='md'
+        onClick={logout}
       >
         <Text>Logout</Text>
       </Box>
