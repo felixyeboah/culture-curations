@@ -40,3 +40,22 @@ export function withPrivate(Component) {
     return <Component auth={auth} {...props} />;
   };
 }
+
+export function withPrivateAdmin(Component) {
+  return function WithPrivateAdmin(props) {
+    const auth = useAuth();
+    const router = useRouter();
+
+    if (
+      !auth.loading &&
+      isEmpty(auth.isAuthenticated()) &&
+      auth?.active === false &&
+      auth.user.role !== 'admin'
+    ) {
+      router.replace('/dashboard');
+      return <p>loading...</p>;
+    }
+
+    return <Component auth={auth} {...props} />;
+  };
+}

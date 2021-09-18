@@ -3,6 +3,7 @@ import { Box, Grid, Heading } from '@chakra-ui/layout';
 import FormInput from '@components/Form/FormInput';
 import FormUpload from '@components/Form/FormUpload';
 import useAPI from '@context/apiContext';
+import { withPrivateAdmin } from '@utils/ProtectPage';
 import AuthLayout from 'container/AuthLayout';
 import { Formik } from 'formik';
 import { useRouter } from 'next/router';
@@ -114,4 +115,4 @@ const ManageGalleryUpload = () => {
   );
 };
 
-export default ManageGalleryUpload;
+export default withPrivateAdmin(ManageGalleryUpload);

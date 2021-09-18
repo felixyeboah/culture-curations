@@ -5,7 +5,7 @@ import { Formik } from 'formik';
 import FormUpload from '@components/Form/FormUpload';
 import { Button } from '@chakra-ui/button';
 import useAPI from '@context/apiContext';
-import { withPrivate } from '@utils/ProtectPage';
+import { withPrivateAdmin } from '@utils/ProtectPage';
 import { useMutation, useQueryClient } from 'react-query';
 import { useRouter } from 'next/router';
 
@@ -87,4 +87,4 @@ const ManageSlidesUpload = () => {
   );
 };
 
-export default withPrivate(ManageSlidesUpload);
+export default withPrivateAdmin(ManageSlidesUpload);

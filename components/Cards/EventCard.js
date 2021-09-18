@@ -68,7 +68,7 @@ const EventCard = ({ expired }) => {
               inset={0}
               bgGradient='linear(to-r, rgba(7, 7, 75, .7), rgba(7, 7, 75, .7))'
             />
-            <Box pos='absolute' bottom={-24}>
+            <Box pos='absolute' bottom={-8}>
               <Image
                 w={{ md: 64 }}
                 src='/images/amapiano.png'

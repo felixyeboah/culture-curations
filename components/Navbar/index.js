@@ -17,7 +17,7 @@ import { BsBagFill } from 'react-icons/bs';
 
 const Navbar = () => {
   const { pathname } = useRouter();
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated } = useAuth();
 
   return (
     <Flex
@@ -91,15 +91,9 @@ const Navbar = () => {
                 {user?.firstName} {user?.lastName}
               </Text>
             </Flex>
-
-            <Box
-              as='button'
-              role='button'
-              aria-label='logout button'
-              onClick={logout}
-            >
-              logout
-            </Box>
+            <NextLink href='/dashboard' passHref>
+              <Link _hover={{ textDecor: 'none' }}>Dashboard</Link>
+            </NextLink>
           </Flex>
         ) : (
           <Box px={{ md: 6 }}>

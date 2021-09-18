@@ -9,6 +9,7 @@ import { Image } from 'cloudinary-react';
 import { IconButton } from '@chakra-ui/button';
 import { BiChevronRight } from 'react-icons/bi';
 import api from '@utils/api';
+import { withPrivateAdmin } from '@utils/ProtectPage';
 
 const ManageGallery = ({ allImages }) => {
   return (
@@ -89,4 +90,4 @@ export async function getStaticProps() {
   };
 }
 
-export default ManageGallery;
+export default withPrivateAdmin(ManageGallery);

@@ -11,6 +11,7 @@ import { BiMenu } from 'react-icons/bi';
 import { BsTrash } from 'react-icons/bs';
 import { useMutation, useQueryClient } from 'react-query';
 import useAPI from '@context/apiContext';
+import { withPrivateAdmin } from '@utils/ProtectPage';
 
 const ManageGallery = ({ gallery }) => {
   const { deleteGallery } = useAPI();
@@ -92,4 +93,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default ManageGallery;
+export default withPrivateAdmin(ManageGallery);

@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 import Icon from '@chakra-ui/icon';
 import { BsArrowRight, BsTrash } from 'react-icons/bs';
 import { Image } from 'cloudinary-react';
-import { withPrivate } from '@utils/ProtectPage';
+import { withPrivate, withPrivateAdmin } from '@utils/ProtectPage';
 import useAPI from '@context/apiContext';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import Masonry from 'react-masonry-css';
@@ -89,4 +89,4 @@ const ManageSlides = () => {
   );
 };
 
-export default withPrivate(ManageSlides);
+export default withPrivateAdmin(ManageSlides);
