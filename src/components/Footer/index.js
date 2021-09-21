@@ -1,0 +1,150 @@
+import { Flex, Icon, Link, Text } from "@chakra-ui/react";
+import React from "react";
+import {
+  FaFacebookSquare,
+  FaInstagram,
+  FaSnapchatGhost,
+  FaTwitter,
+  FaYoutube,
+  FaSpotify,
+} from "react-icons/fa";
+import { SiApplemusic, SiAudiomack } from "react-icons/si";
+import { Link as ReachRouter } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+const Footer = () => {
+  const { pathname } = useLocation();
+  return (
+    <Flex
+      as="footer"
+      align="center"
+      justify="space-between"
+      w="100%"
+      color={pathname === "/" ? "white" : "gray.600"}
+      fontWeight="bold"
+      pos={pathname === "/" ? "fixed" : "relative"}
+      bottom={6}
+      px={{ base: 4, md: 20 }}
+      zIndex={20}
+      d={{
+        base: "none",
+        sm:
+          pathname === "/auth/register" ||
+          pathname === "/auth/login" ||
+          pathname === "/auth/forgot-password" ||
+          pathname === "/auth/reset-password/[id]" ||
+          pathname === "/dashboard" ||
+          pathname === "/manage-slides" ||
+          pathname === "/manage-users" ||
+          pathname === "/my-events" ||
+          pathname === "/manage-slides/upload" ||
+          pathname === "/manage-images" ||
+          pathname === "/manage-images/upload" ||
+          pathname === "/manage-gallery" ||
+          pathname === "/manage-gallery/upload" ||
+          pathname === "/manage-gallery/[slug]"
+            ? ""
+            : "flex",
+      }}
+    >
+      <Flex align="center" d={{ base: "none", sm: "flex" }}>
+        <Link
+          as={ReachRouter}
+          to="/events"
+          _hover={{ textDecor: "none" }}
+          pr={4}
+        >
+          Events
+        </Link>
+
+        <Link
+          as={ReachRouter}
+          to="/merchandise"
+          _hover={{ textDecor: "none" }}
+          pl={4}
+        >
+          Merchandise
+        </Link>
+
+        <Link
+          as={ReachRouter}
+          to="/gallery"
+          _hover={{ textDecor: "none" }}
+          px={4}
+        >
+          Gallery
+        </Link>
+      </Flex>
+      <Flex direction="column" align="center">
+        <Flex align="center" mb={2}>
+          <Link pr={2}>
+            <Icon as={FaFacebookSquare} boxSize={6} />
+          </Link>
+
+          <Link
+            href="https://instagram.com/culturecurations"
+            isExternal
+            _hover={{ textDecor: "none" }}
+            px={2}
+          >
+            <Icon as={FaInstagram} boxSize={6} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={FaSnapchatGhost} boxSize={6} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={FaTwitter} boxSize={6} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={FaYoutube} boxSize={7} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={SiAudiomack} boxSize={7} />
+          </Link>
+
+          <Link px={2}>
+            <Icon as={SiApplemusic} boxSize={7} />
+          </Link>
+
+          <Link pl={2}>
+            <Icon as={FaSpotify} boxSize={7} />
+          </Link>
+        </Flex>
+        <Text
+          fontSize="sm"
+          textAlign="center"
+          mixBlendMode="difference"
+          fontWeight="light"
+        >
+          &copy; Copyright {new Date().getFullYear()}. Culture Curations. All
+          rights reserved.
+        </Text>
+      </Flex>
+      <Flex align="center" d={{ base: "none", sm: "flex" }}>
+        <Link
+          as={ReachRouter}
+          to="/about"
+          _hover={{ textDecor: "none" }}
+          px={4}
+        >
+          About
+        </Link>
+
+        <Link
+          as={ReachRouter}
+          to="/contact"
+          _hover={{ textDecor: "none" }}
+          pl={4}
+        >
+          Contact
+        </Link>
+      </Flex>
+    </Flex>
+  );
+};
+
+export default Footer;
