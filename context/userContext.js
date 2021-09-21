@@ -48,6 +48,7 @@ export const AuthProvider = ({ children }) => {
         api.defaults.headers.Authorization = `Bearer ${data.token}`;
         Cookies.set('_user', JSON.stringify(data.data.user));
         window.localStorage.setItem('_user', JSON.stringify(data.data.user));
+        console.log('history', window.history);
         if (data.data.user.emailSent) {
           router.push('/auth/verify');
         } else if (data.data.user.active) {
@@ -58,7 +59,7 @@ export const AuthProvider = ({ children }) => {
             position: 'top-right',
             isClosable: true,
           });
-          router.push('/dashboard');
+          // router.push('/dashboard');
         }
       }
     } catch (error) {

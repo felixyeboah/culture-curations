@@ -5,20 +5,11 @@ import ActiveLink from 'lib/ActiveLink';
 import NextLink from 'next/link';
 import useAuth from '@context/userContext';
 
-const menuItems = [
-  { id: 1, name: 'Home', path: '/dashboard' },
-  { id: 2, name: 'My Tickets', path: '/my-tickets' },
-  { id: 3, name: 'My Events', path: '/my-events' },
-  { id: 4, name: 'My Account', path: '/my-account' },
-  { id: 5, name: 'Manage Events', path: '/manage-events' },
-  { id: 6, name: 'Manage Slides', path: '/manage-slides' },
-  { id: 7, name: 'Manage Gallery', path: '/manage-gallery' },
-  { id: 8, name: ' Manage Bookings', path: '/manage-bookings' },
-  { id: 9, name: 'Manage Users', path: '/manage-users' },
-];
-
 const Sidebar = () => {
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
+
+  console.log('user', user);
+
   return (
     <Flex
       direction='column'
@@ -41,24 +32,130 @@ const Sidebar = () => {
           </Link>
         </NextLink>
         <List mt={16}>
-          {menuItems.map((item) => (
-            <ActiveLink
-              href={item.path}
-              activeClassName='activeLink'
-              passHref
-              key={item.id}
+          <ActiveLink href='/dashboard' activeClassName='activeLink' passHref>
+            <ListItem
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
             >
-              <ListItem
-                px={8}
-                py={5}
-                w='100%'
-                _hover={{ bg: 'gray.100', color: 'gray.700' }}
-                cursor='pointer'
-              >
-                {item.name}
-              </ListItem>
-            </ActiveLink>
-          ))}
+              Home
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink href='/my-tickets' activeClassName='activeLink' passHref>
+            <ListItem
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              My Tickets
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink href='/my-events' activeClassName='activeLink' passHref>
+            <ListItem
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              My Events
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink href='/my-account' activeClassName='activeLink' passHref>
+            <ListItem
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              My Account
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink
+            href='/manage-events'
+            activeClassName='activeLink'
+            passHref
+          >
+            <ListItem
+              d={user?.role === 'admin' ? 'block' : 'none'}
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              Manage Events
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink
+            href='/manage-slides'
+            activeClassName='activeLink'
+            passHref
+          >
+            <ListItem
+              d={user?.role === 'admin' ? 'block' : 'none'}
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              Manage Slides
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink
+            href='/manage-gallery'
+            activeClassName='activeLink'
+            passHref
+          >
+            <ListItem
+              d={user?.role === 'admin' ? 'block' : 'none'}
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              Manage Gallery
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink
+            href='/manage-bookings'
+            activeClassName='activeLink'
+            passHref
+          >
+            <ListItem
+              d={user?.role === 'admin' ? 'block' : 'none'}
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              Manage Bookings
+            </ListItem>
+          </ActiveLink>
+          <ActiveLink
+            href='/manage-users'
+            activeClassName='activeLink'
+            passHref
+          >
+            <ListItem
+              d={user?.role === 'admin' ? 'block' : 'none'}
+              px={8}
+              py={4}
+              w='100%'
+              _hover={{ bg: 'gray.100', color: 'gray.700' }}
+              cursor='pointer'
+            >
+              Manage Users
+            </ListItem>
+          </ActiveLink>
         </List>
       </Flex>
 

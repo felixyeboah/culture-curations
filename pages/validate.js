@@ -61,6 +61,7 @@ const Validate = ({ id }) => {
               <Property label='Email' value={data?.user?.email} />
               <Property label='Phone Number' value={data?.user?.phoneNumber} />
               <Property label='Event Name' value={data?.ticket?.event.name} />
+              <Property label='Event Date' value={data?.ticket?.event?.date} />
               <Property label='Ticket Name' value={data?.ticket?.name} />
               <Property label='Amount' value={`GHC${data?.ticket?.price}`} />
             </Box>

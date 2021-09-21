@@ -5,6 +5,7 @@ import Masonry from 'react-masonry-css';
 import { SRLWrapper } from 'simple-react-lightbox';
 import { Image } from 'cloudinary-react';
 import api from '@utils/api';
+import { withPrivate } from '@utils/ProtectPage';
 
 const Gallery = ({ gallery }) => {
   console.log('gallery', gallery);
@@ -79,4 +80,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default Gallery;
+export default withPrivate(Gallery);

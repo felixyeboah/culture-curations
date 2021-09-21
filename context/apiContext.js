@@ -1,11 +1,13 @@
 import { useToast } from '@chakra-ui/toast';
 import api from '@utils/api';
 import axios from 'axios';
+import router from 'next/router';
 import React from 'react';
 
 export const ApiContext = React.createContext({});
 
 export const ApiProvider = ({ children }) => {
+  const [url, setUrl] = React.useState('');
   const toast = useToast();
 
   const getSlides = async () => {
@@ -88,16 +90,16 @@ export const ApiProvider = ({ children }) => {
   const buyTicket = async () => {
     try {
       const res = await axios.post(
-        'https://payproxyapi.hubtel.com/items/initiate',
+        process.env.NEXT_PUBLIC_PAYMENT_API,
         {
           totalAmount: 0.5,
           description: 'Amapiano & Brunch',
           callbackUrl:
             'https://curatedbyculture.herokuapp.com/api/v1/orders/payment-hook',
           returnUrl: 'http://localhost:3000/success',
-          merchantAccountNumber: '1511220',
+          merchantAccountNumber: process.env.NEXT_PUBLIC_MERCHANT_ID,
           cancellationUrl: 'http://localhost:3000/canceled',
-          clientReference: '614540192b897ad614319fcc',
+          clientReference: '6145d28ac3b0265986adc9e6',
         },
         {
           headers: {
@@ -110,7 +112,16 @@ export const ApiProvider = ({ children }) => {
         }
       );
 
+      setUrl(res.data.data.checkoutDirectUrl);
+
+      window.localStorage.setItem(
+        '_payment',
+        JSON.stringify(res.data.data.checkoutDirectUrl)
+      );
+
       console.log('result', res);
+
+      router.push('/checkout');
     } catch (error) {
       console.log(error);
     }
@@ -135,6 +146,7 @@ export const ApiProvider = ({ children }) => {
         deleteGallery,
         buyTicket,
         getOrder,
+        url,
       }}
     >
       {children}
